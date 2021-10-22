@@ -3,11 +3,13 @@ import {
   HomeWrapper,
   HomeTopBar,
   AppsIconWrapper,
-  LogoContainer,
+  LogoWrapper,
+  SearchWrapper,
 } from "./HomeStyles";
 import AppsIcon from "@mui/icons-material/Apps";
 import SignInButton from "../../components/SignInButton/SignInButton";
 import logo from "../../assets/google-logo.png";
+import SearchBar from "../../components/SearchBar/SearchBar";
 
 function Home() {
   return (
@@ -20,9 +22,12 @@ function Home() {
         </AppsIconWrapper>
         <SignInButton>Sign In</SignInButton>
       </HomeTopBar>
-      <LogoContainer>
+      <LogoWrapper>
         <img src={logo} alt="Google logo" />
-      </LogoContainer>
+      </LogoWrapper>
+      <SearchWrapper>
+        <SearchBar />
+      </SearchWrapper>
     </HomeWrapper>
   );
 }

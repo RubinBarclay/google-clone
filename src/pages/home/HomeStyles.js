@@ -42,7 +42,7 @@ export const AppsIconWrapper = styled.div`
   }
 `;
 
-export const LogoContainer = styled.div`
+export const LogoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -51,4 +51,9 @@ export const LogoContainer = styled.div`
   height: calc(100% - 56rem);
   max-height: 290px;
   min-height: 92px;
+`;
+
+export const SearchWrapper = styled.div`
+  max-height: 160px;
+  padding: 2rem;
 `;
