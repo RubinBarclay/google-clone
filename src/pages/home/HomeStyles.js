@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const HomeWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`;
+
 export const HomeTopBar = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -34,4 +40,15 @@ export const AppsIconWrapper = styled.div`
   &:hover {
     background-color: rgba(60, 64, 67, 0.08);
   }
+`;
+
+export const LogoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  height: calc(100% - 56rem);
+  max-height: 290px;
+  min-height: 92px;
 `;
