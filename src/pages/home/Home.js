@@ -5,6 +5,8 @@ import {
   AppsIconWrapper,
   LogoWrapper,
   SearchWrapper,
+  SearchButtons,
+  SearchButton,
 } from "./HomeStyles";
 import AppsIcon from "@mui/icons-material/Apps";
 import SignInButton from "../../components/SignInButton/SignInButton";
@@ -27,6 +29,10 @@ function Home() {
       </LogoWrapper>
       <SearchWrapper>
         <SearchBar />
+        <SearchButtons>
+          <SearchButton>Google Search</SearchButton>
+          <SearchButton>I'm Feeling Lucky</SearchButton>
+        </SearchButtons>
       </SearchWrapper>
     </HomeWrapper>
   );

@@ -8,7 +8,7 @@ function SearchBar() {
   return (
     <SearchBarWrapper>
       <SearchIcon sx={{ color: "#9aa0a6", fontSize: 20 }} />
-      <SearchBarInput onChange={(e) => setText(e.target.value)} />
+      <SearchBarInput value={text} onChange={(e) => setText(e.target.value)} />
       {text && (
         <ClearIcon
           sx={{
@@ -17,6 +17,7 @@ function SearchBar() {
             fontSize: 24,
             margin: "0 8px",
           }}
+          onClick={() => setText("")}
         />
       )}
     </SearchBarWrapper>
