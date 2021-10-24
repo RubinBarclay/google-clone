@@ -56,6 +56,7 @@ export const LogoWrapper = styled.div`
 export const SearchWrapper = styled.div`
   max-height: 160px;
   padding: 2rem;
+  margin-bottom: auto;
 `;
 
 export const SearchButtons = styled.div`
@@ -86,5 +87,41 @@ export const SearchButton = styled.button`
     background-color: #f8f9fa;
     border: 1px solid #dadce0;
     color: #202124;
+  }
+`;
+
+export const HomeFooter = styled.div`
+  padding: 0 1.5rem;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #dadce0;
+  font-size: 1.5rem;
+  color: #70757a;
+
+  &:nth-child(2) {
+    font-size: 1.4rem;
+    padding: 0 2rem;
+    border: none;
+  }
+
+  & > div {
+    display: flex;
+    justify-content: spaced-between;
+  }
+
+  & > div > span {
+    padding: 1.5rem;
+    white-space: nowrap;
+
+    &::nth-child(5) {
+      margin-left: auto;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  & > div > div {
+    flex-grow: 1;
   }
 `;

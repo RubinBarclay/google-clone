@@ -7,6 +7,7 @@ import {
   SearchWrapper,
   SearchButtons,
   SearchButton,
+  HomeFooter,
 } from "./HomeStyles";
 import AppsIcon from "@mui/icons-material/Apps";
 import SignInButton from "../../components/SignInButton/SignInButton";
@@ -34,6 +35,25 @@ function Home() {
           <SearchButton>I'm Feeling Lucky</SearchButton>
         </SearchButtons>
       </SearchWrapper>
+      <div>
+        <HomeFooter>
+          <div>
+            <span>Sweden</span>
+          </div>
+        </HomeFooter>
+        <HomeFooter>
+          <div>
+            <span>About</span>
+            <span>Advertising</span>
+            <span>Business</span>
+            <span>How Search works</span>
+            <div />
+            <span>Privacy</span>
+            <span>Terms</span>
+            <span>Settings</span>
+          </div>
+        </HomeFooter>
+      </div>
     </HomeWrapper>
   );
 }
