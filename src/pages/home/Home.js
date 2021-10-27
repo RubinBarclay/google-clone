@@ -1,14 +1,14 @@
 import React from "react";
 import {
-  HomeWrapper,
-  HomeTopBar,
+  Wrapper,
+  TopBar,
   AppsIconWrapper,
   LogoWrapper,
   SearchWrapper,
   SearchButtons,
   SearchButton,
-  HomeFooter,
-  HomeFooterLink,
+  Footer,
+  FooterLink,
 } from "./HomeStyles";
 import AppsIcon from "@mui/icons-material/Apps";
 import SignInButton from "../../components/SignInButton/SignInButton";
@@ -17,15 +17,15 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 
 function Home() {
   return (
-    <HomeWrapper>
-      <HomeTopBar>
+    <Wrapper>
+      <TopBar>
         <span>Gmail</span>
         <span>Images</span>
         <AppsIconWrapper>
           <AppsIcon sx={{ fontSize: 24 }} />
         </AppsIconWrapper>
         <SignInButton>Sign In</SignInButton>
-      </HomeTopBar>
+      </TopBar>
       <LogoWrapper>
         <img src={logo} alt="Google logo" />
       </LogoWrapper>
@@ -37,25 +37,25 @@ function Home() {
         </SearchButtons>
       </SearchWrapper>
       <div>
-        <HomeFooter>
+        <Footer>
           <div>
-            <HomeFooterLink>Sweden</HomeFooterLink>
+            <FooterLink>Sweden</FooterLink>
           </div>
-        </HomeFooter>
-        <HomeFooter>
+        </Footer>
+        <Footer>
           <div>
-            <HomeFooterLink>About</HomeFooterLink>
-            <HomeFooterLink>Advertising</HomeFooterLink>
-            <HomeFooterLink>Business</HomeFooterLink>
-            <HomeFooterLink>How Search works</HomeFooterLink>
+            <FooterLink>About</FooterLink>
+            <FooterLink>Advertising</FooterLink>
+            <FooterLink>Business</FooterLink>
+            <FooterLink>How Search works</FooterLink>
             <div />
-            <HomeFooterLink>Privacy</HomeFooterLink>
-            <HomeFooterLink>Terms</HomeFooterLink>
-            <HomeFooterLink>Settings</HomeFooterLink>
+            <FooterLink>Privacy</FooterLink>
+            <FooterLink>Terms</FooterLink>
+            <FooterLink>Settings</FooterLink>
           </div>
-        </HomeFooter>
+        </Footer>
       </div>
-    </HomeWrapper>
+    </Wrapper>
   );
 }
 

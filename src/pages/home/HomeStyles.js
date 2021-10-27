@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-export const HomeWrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
 `;
 
-export const HomeTopBar = styled.div`
+export const TopBar = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -89,7 +89,7 @@ export const SearchButton = styled.button`
   }
 `;
 
-export const HomeFooter = styled.div`
+export const Footer = styled.div`
   padding: 0 1.5rem;
   background-color: #f2f2f2;
   border-bottom: 1px solid #dadce0;
@@ -112,7 +112,7 @@ export const HomeFooter = styled.div`
   }
 `;
 
-export const HomeFooterLink = styled.span`
+export const FooterLink = styled.span`
   padding: 1.5rem;
   white-space: nowrap;
 
