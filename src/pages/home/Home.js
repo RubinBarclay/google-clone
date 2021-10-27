@@ -8,6 +8,7 @@ import {
   SearchButtons,
   SearchButton,
   HomeFooter,
+  HomeFooterLink,
 } from "./HomeStyles";
 import AppsIcon from "@mui/icons-material/Apps";
 import SignInButton from "../../components/SignInButton/SignInButton";
@@ -38,19 +39,19 @@ function Home() {
       <div>
         <HomeFooter>
           <div>
-            <span>Sweden</span>
+            <HomeFooterLink>Sweden</HomeFooterLink>
           </div>
         </HomeFooter>
         <HomeFooter>
           <div>
-            <span>About</span>
-            <span>Advertising</span>
-            <span>Business</span>
-            <span>How Search works</span>
+            <HomeFooterLink>About</HomeFooterLink>
+            <HomeFooterLink>Advertising</HomeFooterLink>
+            <HomeFooterLink>Business</HomeFooterLink>
+            <HomeFooterLink>How Search works</HomeFooterLink>
             <div />
-            <span>Privacy</span>
-            <span>Terms</span>
-            <span>Settings</span>
+            <HomeFooterLink>Privacy</HomeFooterLink>
+            <HomeFooterLink>Terms</HomeFooterLink>
+            <HomeFooterLink>Settings</HomeFooterLink>
           </div>
         </HomeFooter>
       </div>

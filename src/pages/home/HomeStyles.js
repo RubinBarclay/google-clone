@@ -84,7 +84,6 @@ export const SearchButton = styled.button`
 
   &:hover {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    background-color: #f8f9fa;
     border: 1px solid #dadce0;
     color: #202124;
   }
@@ -108,20 +107,16 @@ export const HomeFooter = styled.div`
     justify-content: spaced-between;
   }
 
-  & > div > span {
-    padding: 1.5rem;
-    white-space: nowrap;
-
-    &::nth-child(5) {
-      margin-left: auto;
-    }
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
   & > div > div {
     flex-grow: 1;
+  }
+`;
+
+export const HomeFooterLink = styled.span`
+  padding: 1.5rem;
+  white-space: nowrap;
+
+  &:hover {
+    text-decoration: underline;
   }
 `;

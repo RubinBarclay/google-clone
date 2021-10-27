@@ -17,6 +17,7 @@ function SearchBar() {
             fontSize: 24,
             margin: "0 8px",
           }}
+          aria-label="Clear search box"
           onClick={() => setText("")}
         />
       )}
