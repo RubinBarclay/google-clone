@@ -6,13 +6,15 @@ export const Wrapper = styled.div`
 `;
 
 export const TopBar = styled.div`
+  display: flex;
+  align-items: center;
   height: 6.5rem;
   padding-top: 2rem;
   margin: 0.6rem 0 0.4rem;
 `;
 
 export const Logo = styled.img`
-  box-sizing: initial;
-  padding: 0.4rem 2.8rem 0 3rem;
+  box-sizing: content-box;
+  padding: 0.4rem 3.4rem 0 2.4rem;
   height: 3rem;
 `;

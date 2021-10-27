@@ -30,7 +30,7 @@ function Home() {
         <img src={logo} alt="Google logo" />
       </LogoWrapper>
       <SearchWrapper>
-        <SearchBar />
+        <SearchBar variant="home" />
         <SearchButtons>
           <SearchButton>Google Search</SearchButton>
           <SearchButton>I'm Feeling Lucky</SearchButton>
