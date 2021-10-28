@@ -1,5 +1,5 @@
-import { TopBar, Wrapper, Logo } from "./ResultStyles";
-import logoSM from "../../assets/google-logo-sm.png";
+import { TopBar, Wrapper, Logo, TopMenu } from "./ResultStyles";
+import logoSM from "../../assets/images/google-logo-sm.png";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import TopBarIconWrapper from "../../components/TopBarIconWrapper/TopBarIconWrapper";
 import Settings from "@mui/icons-material/Settings";
@@ -20,6 +20,7 @@ function Results() {
         </TopBarIconWrapper>
         <SignInButton>Sign in</SignInButton>
       </TopBar>
+      <TopMenu>Google font babyyy</TopMenu>
     </Wrapper>
   );
 }

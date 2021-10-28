@@ -11,7 +11,7 @@ import {
 } from "./HomeStyles";
 import AppsIcon from "@mui/icons-material/Apps";
 import SignInButton from "../../components/SignInButton/SignInButton";
-import logo from "../../assets/google-logo.png";
+import logo from "../../assets/images/google-logo.png";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import TopBarIconWrapper from "../../components/TopBarIconWrapper/TopBarIconWrapper";
 

@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 const SignInButton = styled.button`
+  font-family: "Product Sans Regular", arial, sans-serif;
   font-size: 1.4rem;
+  font-weight: 500;
   color: white;
   background-color: rgb(26, 115, 232);
   padding: 0.9rem 2.3rem;
