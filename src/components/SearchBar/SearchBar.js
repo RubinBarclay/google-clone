@@ -12,7 +12,7 @@ function SearchBar({ variant }) {
   };
 
   return (
-    <SearchBarWrapper>
+    <SearchBarWrapper variant={variant}>
       <SearchIcon
         sx={{
           color: "#9aa0a6",

@@ -2,7 +2,6 @@ import React from "react";
 import {
   Wrapper,
   TopBar,
-  AppsIconWrapper,
   LogoWrapper,
   SearchWrapper,
   SearchButtons,
@@ -14,6 +13,7 @@ import AppsIcon from "@mui/icons-material/Apps";
 import SignInButton from "../../components/SignInButton/SignInButton";
 import logo from "../../assets/google-logo.png";
 import SearchBar from "../../components/SearchBar/SearchBar";
+import TopBarIconWrapper from "../../components/TopBarIconWrapper/TopBarIconWrapper";
 
 function Home() {
   return (
@@ -21,9 +21,9 @@ function Home() {
       <TopBar>
         <span>Gmail</span>
         <span>Images</span>
-        <AppsIconWrapper>
+        <TopBarIconWrapper>
           <AppsIcon sx={{ fontSize: 24 }} />
-        </AppsIconWrapper>
+        </TopBarIconWrapper>
         <SignInButton>Sign In</SignInButton>
       </TopBar>
       <LogoWrapper>

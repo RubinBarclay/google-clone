@@ -26,22 +26,6 @@ export const TopBar = styled.div`
   }
 `;
 
-export const AppsIconWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  color: #5f6368;
-  cursor: pointer;
-  margin-right: 4px;
-
-  &:hover {
-    background-color: rgba(60, 64, 67, 0.08);
-  }
-`;
-
 export const LogoWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -51,9 +35,13 @@ export const LogoWrapper = styled.div`
   height: calc(100% - 56rem);
   max-height: 290px;
   min-height: 92px;
+  margin-bottom: 0.6rem;
 `;
 
 export const SearchWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   max-height: 160px;
   padding: 2rem;
   margin-bottom: auto;
@@ -65,6 +53,7 @@ export const SearchButtons = styled.div`
   align-items: center;
   height: 7rem;
   padding-top: 1.8rem;
+  flex-basis: 100%;
 `;
 
 export const SearchButton = styled.button`

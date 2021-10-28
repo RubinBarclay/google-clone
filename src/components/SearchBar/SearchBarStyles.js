@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const SearchBarWrapper = styled.div`
   display: flex;
   align-items: center;
-  margin: auto;
   padding: 0 0.8rem 0 1.4rem;
   width: auto;
   max-width: 58rem;
@@ -11,9 +10,13 @@ export const SearchBarWrapper = styled.div`
   background-color: #fff;
   border: 1px solid #dfe1e5;
   border-radius: 24px;
+  flex-grow: 1;
+
+  box-shadow: ${(p) =>
+    p.variant === "results" ? "0 2px 5px 1px rgba(64, 60, 67, .16)" : "none"};
 
   &:hover {
-    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    box-shadow: 0 2px 8px 1px rgba(64, 60, 67, 0.24);
   }
 `;
 
