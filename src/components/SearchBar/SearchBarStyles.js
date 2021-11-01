@@ -5,8 +5,8 @@ export const SearchBarWrapper = styled.div`
   align-items: center;
   padding: 0 0.8rem 0 1.4rem;
   width: auto;
-  max-width: 58rem;
-  height: 4.4rem;
+  max-width: ${(p) => (p.variant === "home" ? "58rem" : "69.2rem")};
+  height: 4.6rem;
   background-color: #fff;
   border: 1px solid #dfe1e5;
   border-radius: 24px;
