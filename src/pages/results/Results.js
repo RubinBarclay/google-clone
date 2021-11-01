@@ -6,6 +6,11 @@ import {
   TopMenu,
   TopMenuOption,
   TopMenuToolsButton,
+  ResultsList,
+  SearchInformation,
+  SearchResult,
+  ResultUrl,
+  ResultBody,
 } from "./ResultStyles";
 import logoSM from "../../assets/images/google-logo-sm.png";
 import SearchBar from "../../components/SearchBar/SearchBar";
@@ -68,6 +73,29 @@ function Results() {
         </TopMenu>
         <span>SafeSearch on</span>
       </TopMenuWrapper>
+      <ResultsList>
+        <SearchInformation>About XXXX searches in XXX time</SearchInformation>
+        <SearchResult>
+          <ResultUrl>
+            <a href="/">
+              https://fakesite.com
+              <span>
+                &gt; Home &gt; Place <MoreVert sx={{ fontSize: 18 }} />
+              </span>
+              <h3>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum!
+              </h3>
+            </a>
+          </ResultUrl>
+          <ResultBody>
+            <span>22 Jun 2014 — </span> Ice cream tastes proper due to the fact
+            it includes a correct amount of fats and flavorings. Fat on its
+            personal tastes fantastically bland and rotten, but fat ... 12
+            answers · 4 votes: Real ice cream has a lot of fat. Being the cream
+            and the egg yolks. Fat is a...
+          </ResultBody>
+        </SearchResult>
+      </ResultsList>
     </Wrapper>
   );
 }
