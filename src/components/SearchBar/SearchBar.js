@@ -4,11 +4,11 @@ import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
 import KeyboardVoiceIcon from "@mui/icons-material/KeyboardVoice";
 
-function SearchBar({ variant }) {
-  const [text, setText] = useState("");
+function SearchBar({ variant, searchQuery, setSearchQuery }) {
+  // const [text, setText] = useState("");
 
   const hideSearchIconHandler = () => {
-    return variant === "home" || text !== "" ? "visible" : "hidden";
+    return variant === "home" || searchQuery !== "" ? "visible" : "hidden";
   };
 
   return (
@@ -20,8 +20,12 @@ function SearchBar({ variant }) {
           visibility: hideSearchIconHandler(),
         }}
       />
-      <SearchBarInput value={text} onChange={(e) => setText(e.target.value)} />
-      {text && (
+      <SearchBarInput
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+      />
+      {/* <SearchBarInput value={text} onChange={(e) => setText(e.target.value)} /> */}
+      {searchQuery && (
         <>
           <ClearIcon
             sx={{
@@ -31,7 +35,7 @@ function SearchBar({ variant }) {
               margin: "0 8px",
             }}
             aria-label="Clear search box"
-            onClick={() => setText("")}
+            onClick={() => setSearchQuery("")}
           />
           <div
             style={{

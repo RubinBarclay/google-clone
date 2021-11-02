@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Wrapper,
   TopBar,
@@ -14,8 +14,11 @@ import SignInButton from "../../components/SignInButton/SignInButton";
 import logo from "../../assets/images/google-logo.png";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import TopBarIconWrapper from "../../components/TopBarIconWrapper/TopBarIconWrapper";
+import SearchContext from "../../context/searchContext";
 
 function Home() {
+  const { searchQuery, setSearchQuery } = useContext(SearchContext);
+
   return (
     <Wrapper>
       <TopBar>
@@ -30,7 +33,11 @@ function Home() {
         <img src={logo} alt="Google logo" />
       </LogoWrapper>
       <SearchWrapper>
-        <SearchBar variant="home" />
+        <SearchBar
+          variant="home"
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+        />
         <SearchButtons>
           <SearchButton>Google Search</SearchButton>
           <SearchButton>I'm Feeling Lucky</SearchButton>
