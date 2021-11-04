@@ -26,11 +26,11 @@ import {
   ArticleOutlined,
   MoreVert,
 } from "@mui/icons-material";
-import { useContext, useEffect, useState } from "react";
-import SearchContext from "../../context/searchContext";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
 
 function Results() {
-  const { searchQuery } = useContext(SearchContext);
+  const { searchQuery } = useParams();
   const [results, setResults] = useState([]);
   const [searchInfo, setSearchInfo] = useState({});
 

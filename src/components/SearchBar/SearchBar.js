@@ -1,19 +1,18 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { SearchBarInput, SearchBarWrapper } from "./SearchBarStyles";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
 import KeyboardVoiceIcon from "@mui/icons-material/KeyboardVoice";
-import { useHistory } from "react-router";
-import SearchContext from "../../context/searchContext";
+import { useHistory, useParams } from "react-router";
 
 function SearchBar({ variant }) {
-  const { searchQuery, setSearchQuery } = useContext(SearchContext);
+  const { searchQuery } = useParams();
   const [text, setText] = useState("");
   let history = useHistory();
 
   // Set current search as value
   useEffect(() => {
-    setText(searchQuery);
+    setText(searchQuery || "");
   }, [searchQuery]);
 
   const hideSearchIconHandler = () => {
@@ -21,8 +20,7 @@ function SearchBar({ variant }) {
   };
 
   const onSubmitHandler = () => {
-    setSearchQuery(text);
-    history.push("/results");
+    history.push(`/results/${text}`);
   };
 
   return (
@@ -34,10 +32,6 @@ function SearchBar({ variant }) {
           visibility: hideSearchIconHandler(),
         }}
       />
-      {/* <SearchBarInput
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-      /> */}
       <SearchBarInput value={text} onChange={(e) => setText(e.target.value)} />
       {text && (
         <>

@@ -16,7 +16,7 @@ function App() {
             <Route path="/" exact>
               <Home />
             </Route>
-            <Route path="/results">
+            <Route path="/results/:searchQuery">
               <Results />
             </Route>
           </Switch>
