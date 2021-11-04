@@ -149,3 +149,31 @@ export const ResultBody = styled.div`
     color: #70757a;
   }
 `;
+
+export const Footer = styled.div`
+  padding: 0 15.5rem;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #dadce0;
+  font-size: 1.5rem;
+  color: #70757a;
+
+  &:nth-child(2) {
+    font-size: 1.4rem;
+    border: none;
+  }
+
+  & > div {
+    display: flex;
+    justify-content: spaced-between;
+  }
+`;
+
+export const FooterLink = styled.span`
+  cursor: pointer;
+  padding: 1.5rem;
+  white-space: nowrap;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;

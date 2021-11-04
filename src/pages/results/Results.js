@@ -11,6 +11,8 @@ import {
   SearchResult,
   ResultUrl,
   ResultBody,
+  Footer,
+  FooterLink,
 } from "./ResultStyles";
 import logoSM from "../../assets/images/google-logo-sm.png";
 import SearchBar from "../../components/SearchBar/SearchBar";
@@ -120,6 +122,21 @@ function Results() {
           </SearchResult>
         ))}
       </ResultsList>
+      <div>
+        <Footer>
+          <div>
+            <FooterLink>Sweden</FooterLink>
+          </div>
+        </Footer>
+        <Footer>
+          <div>
+            <FooterLink>Help</FooterLink>
+            <FooterLink>Send feedback</FooterLink>
+            <FooterLink>Privacy</FooterLink>
+            <FooterLink>Terms</FooterLink>
+          </div>
+        </Footer>
+      </div>
     </Wrapper>
   );
 }
