@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SearchBarWrapper = styled.div`
+export const SearchBarWrapper = styled.form`
   display: flex;
   align-items: center;
   padding: 0 0.8rem 0 1.4rem;

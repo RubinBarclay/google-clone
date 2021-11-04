@@ -1,18 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { SearchBarInput, SearchBarWrapper } from "./SearchBarStyles";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
 import KeyboardVoiceIcon from "@mui/icons-material/KeyboardVoice";
+import { useHistory } from "react-router";
+import SearchContext from "../../context/searchContext";
 
-function SearchBar({ variant, searchQuery, setSearchQuery }) {
-  // const [text, setText] = useState("");
+function SearchBar({ variant }) {
+  const { searchQuery, setSearchQuery } = useContext(SearchContext);
+  const [text, setText] = useState("");
+  let history = useHistory();
+
+  // Set current search as value
+  useEffect(() => {
+    setText(searchQuery);
+  }, [searchQuery]);
 
   const hideSearchIconHandler = () => {
-    return variant === "home" || searchQuery !== "" ? "visible" : "hidden";
+    return variant === "home" || text !== "" ? "visible" : "hidden";
+  };
+
+  const onSubmitHandler = () => {
+    setSearchQuery(text);
+    history.push("/results");
   };
 
   return (
-    <SearchBarWrapper variant={variant}>
+    <SearchBarWrapper variant={variant} onSubmit={onSubmitHandler}>
       <SearchIcon
         sx={{
           color: "#9aa0a6",
@@ -20,12 +34,12 @@ function SearchBar({ variant, searchQuery, setSearchQuery }) {
           visibility: hideSearchIconHandler(),
         }}
       />
-      <SearchBarInput
+      {/* <SearchBarInput
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-      />
-      {/* <SearchBarInput value={text} onChange={(e) => setText(e.target.value)} /> */}
-      {searchQuery && (
+      /> */}
+      <SearchBarInput value={text} onChange={(e) => setText(e.target.value)} />
+      {text && (
         <>
           <ClearIcon
             sx={{
@@ -35,7 +49,7 @@ function SearchBar({ variant, searchQuery, setSearchQuery }) {
               margin: "0 8px",
             }}
             aria-label="Clear search box"
-            onClick={() => setSearchQuery("")}
+            onClick={() => setText("")}
           />
           <div
             style={{

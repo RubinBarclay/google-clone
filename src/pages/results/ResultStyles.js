@@ -109,7 +109,9 @@ export const ResultUrl = styled.cite`
   cursor: pointer;
 
   & span {
-    color: #5f6368;
+    display: inline-block;
+    color: #202124;
+    text-decoration: none;
     margin-left: 0.5rem;
   }
 
@@ -124,6 +126,10 @@ export const ResultUrl = styled.cite`
     font-weight: normal;
     padding-top: 5px;
     margin-bottom: 3px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 `;
 

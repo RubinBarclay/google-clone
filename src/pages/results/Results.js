@@ -26,8 +26,27 @@ import {
   ArticleOutlined,
   MoreVert,
 } from "@mui/icons-material";
+import { useContext, useEffect, useState } from "react";
+import SearchContext from "../../context/searchContext";
 
 function Results() {
+  const { searchQuery } = useContext(SearchContext);
+  const [results, setResults] = useState([]);
+  const [searchInfo, setSearchInfo] = useState({});
+
+  useEffect(() => {
+    const fetchResults = async () => {
+      const response = await fetch(`/api/search/${searchQuery}`);
+      const data = await response.json();
+
+      console.log(data);
+      setSearchInfo(data.searchInformation);
+      setResults(data.items);
+    };
+
+    fetchResults();
+  }, [searchQuery]);
+
   return (
     <Wrapper>
       <TopBar>
@@ -74,27 +93,26 @@ function Results() {
         <span>SafeSearch on</span>
       </TopMenuWrapper>
       <ResultsList>
-        <SearchInformation>About XXXX searches in XXX time</SearchInformation>
-        <SearchResult>
-          <ResultUrl>
-            <a href="/">
-              https://fakesite.com
-              <span>
-                &gt; Home &gt; Place <MoreVert sx={{ fontSize: 18 }} />
-              </span>
-              <h3>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum!
-              </h3>
-            </a>
-          </ResultUrl>
-          <ResultBody>
-            <span>22 Jun 2014 — </span> Ice cream tastes proper due to the fact
-            it includes a correct amount of fats and flavorings. Fat on its
-            personal tastes fantastically bland and rotten, but fat ... 12
-            answers · 4 votes: Real ice cream has a lot of fat. Being the cream
-            and the egg yolks. Fat is a...
-          </ResultBody>
-        </SearchResult>
+        <SearchInformation>
+          About {searchInfo.formattedTotalResults} results in (
+          {searchInfo.formattedSearchTime} seconds)
+        </SearchInformation>
+        {results.map((result) => (
+          <SearchResult key={result?.cacheId + Math.random()}>
+            <ResultUrl>
+              <a href={result.link}>
+                <span>
+                  {result.formattedUrl}
+                  <MoreVert sx={{ fontSize: 18 }} />
+                </span>
+                <h3>{result.title}</h3>
+              </a>
+            </ResultUrl>
+            <ResultBody
+              dangerouslySetInnerHTML={{ __html: result.htmlSnippet }}
+            />
+          </SearchResult>
+        ))}
       </ResultsList>
     </Wrapper>
   );
