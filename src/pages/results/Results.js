@@ -33,13 +33,19 @@ function Results() {
   const { searchQuery } = useParams();
   const [results, setResults] = useState([]);
   const [searchInfo, setSearchInfo] = useState({});
+  const [topbarShadow, setTopbarShadow] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setTopbarShadow(window.scrollY > 52);
+    });
+  }, []);
 
   useEffect(() => {
     const fetchResults = async () => {
       const response = await fetch(`/api/search/${searchQuery}`);
       const data = await response.json();
 
-      console.log(data);
       setSearchInfo(data.searchInformation);
       setResults(data.items);
     };
@@ -49,7 +55,7 @@ function Results() {
 
   return (
     <Wrapper>
-      <TopBar>
+      <TopBar bottomShadow={topbarShadow}>
         <Logo>
           <img src={logoSM} alt="Google logo" style={{ width: "9.2rem" }} />
         </Logo>
