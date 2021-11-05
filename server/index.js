@@ -13,7 +13,8 @@ const port = process.env.PORT || 4000;
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, "../build")));
+// Serve static folder when in deployment
+process.env.PORT && app.use(express.static(path.join(__dirname, "../build")));
 
 // Reverse proxy call for Google Search API
 app.get("/api/search/:query", async (req, res) => {
