@@ -1,10 +1,11 @@
 import express from "express";
 import fetch from "node-fetch";
 import cors from "cors";
-import dotenv from "dotenv";
 import path from "path";
+import dotenv from "dotenv";
 
 dotenv.config();
+const __dirname = path.resolve();
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -12,8 +13,7 @@ const port = process.env.PORT || 4000;
 app.use(cors());
 app.use(express.json());
 
-// Serve build folder if in deployment
-process.env.PORT && app.use(express.static(path.join(__dirname, "../build")));
+app.use(express.static(path.join(__dirname, "../build")));
 
 // Reverse proxy call for Google Search API
 app.get("/api/search/:query", async (req, res) => {
