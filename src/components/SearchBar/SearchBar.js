@@ -15,6 +15,7 @@ function SearchBar({ variant }) {
     setText(searchQuery || "");
   }, [searchQuery]);
 
+  // Hides search icon by default on results page
   const hideSearchIconHandler = () => {
     return variant === "home" || text !== "" ? "visible" : "hidden";
   };
@@ -24,7 +25,11 @@ function SearchBar({ variant }) {
   };
 
   return (
-    <SearchBarWrapper variant={variant} onSubmit={onSubmitHandler}>
+    <SearchBarWrapper
+      id="searchBar"
+      variant={variant}
+      onSubmit={onSubmitHandler}
+    >
       <SearchIcon
         sx={{
           color: "#9aa0a6",
@@ -54,7 +59,6 @@ function SearchBar({ variant }) {
           />
         </>
       )}
-      {/* TODO: Add google voice API */}
       <KeyboardVoiceIcon
         sx={{
           cursor: "pointer",

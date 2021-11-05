@@ -1,59 +1,32 @@
 import React from "react";
-import {
-  Wrapper,
-  TopBar,
-  LogoWrapper,
-  SearchWrapper,
-  SearchButtons,
-  SearchButton,
-  Footer,
-  FooterLink,
-} from "./HomeStyles";
-import AppsIcon from "@mui/icons-material/Apps";
-import SignInButton from "../../components/SignInButton/SignInButton";
+import { Wrapper, LogoWrapper } from "./HomeStyles";
+import TopBar from "./TopBar/TopBar";
+import Search from "./Search/Search";
+import Footer from "../../components/Footer/Footer";
 import logo from "../../assets/images/google-logo.png";
-import SearchBar from "../../components/SearchBar/SearchBar";
-import TopBarIconWrapper from "../../components/TopBarIconWrapper/TopBarIconWrapper";
 
 function Home() {
   return (
     <Wrapper>
-      <TopBar>
-        <span>Gmail</span>
-        <span>Images</span>
-        <TopBarIconWrapper>
-          <AppsIcon sx={{ fontSize: 24 }} />
-        </TopBarIconWrapper>
-        <SignInButton>Sign In</SignInButton>
-      </TopBar>
+      <TopBar />
       <LogoWrapper>
         <img src={logo} alt="Google logo" />
       </LogoWrapper>
-      <SearchWrapper>
-        <SearchBar variant="home" />
-        <SearchButtons>
-          <SearchButton>Google Search</SearchButton>
-          <SearchButton>I'm Feeling Lucky</SearchButton>
-        </SearchButtons>
-      </SearchWrapper>
+      <Search />
       <div>
-        <Footer>
-          <div>
-            <FooterLink>Sweden</FooterLink>
-          </div>
-        </Footer>
-        <Footer>
-          <div>
-            <FooterLink>About</FooterLink>
-            <FooterLink>Advertising</FooterLink>
-            <FooterLink>Business</FooterLink>
-            <FooterLink>How Search works</FooterLink>
-            <div />
-            <FooterLink>Privacy</FooterLink>
-            <FooterLink>Terms</FooterLink>
-            <FooterLink>Settings</FooterLink>
-          </div>
-        </Footer>
+        <Footer variant="home" links={["Sweden"]} />
+        <Footer
+          variant="home"
+          links={[
+            "About",
+            "Advertising",
+            "Business",
+            "How Search Works",
+            "Privacy",
+            "Terms",
+            "Settings",
+          ]}
+        />
       </div>
     </Wrapper>
   );
