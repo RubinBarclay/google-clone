@@ -14,7 +14,9 @@ app.use(cors());
 app.use(express.json());
 
 // Serve static folder when in deployment
-process.env.PORT && app.use(express.static(path.join(__dirname, "../build")));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../build")));
+}
 
 // Reverse proxy call for Google Search API
 app.get("/api/search/:query", async (req, res) => {
