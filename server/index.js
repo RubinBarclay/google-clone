@@ -13,16 +13,6 @@ const port = process.env.PORT || 4000;
 app.use(cors());
 app.use(express.json());
 
-// Serve static folder when in deployment
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../build")));
-
-  // Handle React routing, return all requests to index.html
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "..", "build", "index.html"));
-  });
-}
-
 // Reverse proxy call for Google Search API
 app.get("/api/search/:query", async (req, res) => {
   try {
@@ -41,5 +31,15 @@ app.get("/api/search/:query", async (req, res) => {
     res.status(500).send(error.message);
   }
 });
+
+// Serve static folder when in deployment
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../build")));
+
+  // Handle React routing, return all requests to index.html
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "..", "build", "index.html"));
+  });
+}
 
 app.listen(port, () => console.log(`Server is running on port: ${port}`));
