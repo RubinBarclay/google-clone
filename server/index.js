@@ -1,11 +1,11 @@
-import express from "express";
-import fetch from "node-fetch";
-import cors from "cors";
-import path from "path";
-import dotenv from "dotenv";
+require("dotenv").config();
 
-dotenv.config();
-const __dirname = path.resolve();
+const express = require("express");
+const axios = require("axios");
+const cors = require("cors");
+const path = require("path");
+
+// const __dirname = path.resolve();
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -16,6 +16,11 @@ app.use(express.json());
 // Serve static folder when in deployment
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../build")));
+
+  // Handle React routing, return all requests to index.html
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "..", "build", "index.html"));
+  });
 }
 
 // Reverse proxy call for Google Search API
@@ -28,11 +33,10 @@ app.get("/api/search/:query", async (req, res) => {
     const googleSearchUrl = `https://customsearch.googleapis.com/customsearch/v1?key=${apiKey}&cx=${searchEngineId}&q=${searchQuery}`;
 
     // Fetch search request
-    const apiRespone = await fetch(googleSearchUrl);
-    const data = await apiRespone.json();
+    const apiResponse = await axios(googleSearchUrl);
 
     // Send data to frontend
-    res.status(200).send(data);
+    res.status(200).send(apiResponse.data);
   } catch (error) {
     res.status(500).send(error.message);
   }
