@@ -28,7 +28,7 @@ app.get("/api/search/:query", async (req, res) => {
     // Send data to frontend
     res.status(200).json(apiResponse.data);
   } catch (error) {
-    res.status(500).send(error.message);
+    res.status(500).json(error);
   }
 });
 
