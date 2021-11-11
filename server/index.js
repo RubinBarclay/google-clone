@@ -26,7 +26,7 @@ app.get("/api/search/:query", async (req, res) => {
     const apiResponse = await axios(googleSearchUrl);
 
     // Send data to frontend
-    res.status(200).send(apiResponse.data);
+    res.status(200).json(apiResponse.data);
   } catch (error) {
     res.status(500).send(error.message);
   }
